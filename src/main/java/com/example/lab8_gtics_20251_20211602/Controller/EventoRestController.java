@@ -95,4 +95,10 @@ public class EventoRestController {
         eventoRepository.save(evento);
         return ResponseEntity.status(HttpStatus.CREATED).body("Evento registrado correctamente");
     }
+
+    @GetMapping("/eventos/registrados")
+    public List<Evento> obtenerEventosRegistrados() {
+        return eventoRepository.findAll();
+    }
+
 }
